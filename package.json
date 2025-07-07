@@ -1,0 +1,39 @@
+{
+  "name": "rivoni-vila-recruitment",
+  "version": "1.0.0",
+  "description": "Rivoni Vila Recruitment - Professional Talent Acquisition Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/index.html",
+    "build": "npm run clean && npm run copy && npm run optimize",
+    "clean": "rimraf dist",
+    "copy": "copyfiles \"**/*\" dist",
+    "optimize": "npm run optimize-css && npm run optimize-js && npm run optimize-images",
+    "optimize-css": "cleancss -o dist/assets/css/main.min.css assets/css/main.css",
+    "optimize-js": "uglifyjs assets/js/main.js -o dist/assets/js/main.min.js",
+    "optimize-images": "echo 'Image optimization would go here'",
+    "serve": "live-server --port=3000 --open=/index.html dist",
+    "deploy": "npm run build && echo 'Build complete! Ready for deployment.'"
+  },
+  "keywords": [
+    "recruitment",
+    "talent-acquisition",
+    "south-africa",
+    "job-placement",
+    "hr-consulting"
+  ],
+  "author": "Rivoni Vila Recruitment",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "copyfiles": "^2.4.1",
+    "live-server": "^1.2.2",
+    "rimraf": "^5.0.5",
+    "uglify-js": "^3.17.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rivonivilarecruitment/website.git"
+  },
+  "homepage": "https://www.rivonivilarecruitment.co.za"
+} 
